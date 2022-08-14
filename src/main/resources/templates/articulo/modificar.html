@@ -1,20 +1,18 @@
-
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://wwww.thymeleaf.org" 
       xmlns:sec="http://thymeleaft.org/extras/spring-security">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8"/>
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
+        <div class="modal-dialog modal-lg">
             <h1>Datos de articulo</h1>
-            <a th:href="@{/articulo/listado}">Regresar</a>
+            
+            <h5 class="modal-title" th:href="@{/articulo/listado}">Regresar</h5>
 
-            <br/>        <br/>
-
+            <br/>        
             <form th:action="@{/articulo/guardar}"
                   method="post"
                   th:object="${articulo}">
